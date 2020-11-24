@@ -1,0 +1,19 @@
+SendCoinsFromAccountToModule
+
+each block
+
+1 runMatch 
+constrcut bid list and ask list
+2 match 
+find two matched orders in the bid list and ask list and the filled price
+2 deal 
+settlement coin for two matched orders uppon the filled price and then send message 
+
+Calculate actual fee for each deal:
+actualFee = sdk.NewDec(or.DealStock).Mul(sdk.NewDec(or.FrozenCommission)).Quo(sdk.NewDec(or.Quantity))
+
+
+For now, all the fees is added additinal to order see market/handlers.go/checkMsgCreateOrder
+
+
+	
